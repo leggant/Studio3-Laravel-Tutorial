@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index')->name('pages.index');
 Route::get('/about', 'PagesController@about')->name('pages.about');
+
+Route::prefix('todos')->group(function () {
+    Route::get('/','TodosController@index')->name('todos.index');
+    Route::get('/create','TodosController@create')->name('todos.create');
+    Route::get('/{id}','TodosController@show')->name('todos.show');
+    Route::get('/{id}/edit','TodosController@edit')->name('todos.edit');
+    Route::post('/','TodosController@store')->name('todos.store'); // making a post request
+    Route::put('/{id}','TodosController@update')->name('todos.update'); // making a put request
+    Route::delete('/{id}','TodosController@destroy')->name('todos.destroy'); // making a delete request
+});

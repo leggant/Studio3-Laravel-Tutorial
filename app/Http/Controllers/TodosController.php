@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Todo;
 use Illuminate\Http\Request;
+
 
 class TodosController extends Controller
 {
@@ -13,7 +14,8 @@ class TodosController extends Controller
      */
     public function index()
     {
-        //
+        $todos = Todo::orderBy('created_at','desc')->paginate(8);
+            return view('todos.index',['todos' => $todos]);
     }
 
     /**
@@ -23,7 +25,7 @@ class TodosController extends Controller
      */
     public function create()
     {
-        //
+        return view('todos.create');
     }
 
     /**

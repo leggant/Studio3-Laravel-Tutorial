@@ -18,20 +18,12 @@
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-            <div class="flex-center position-ref">
-                @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                            <a href="{{ url('/home') }}">Home</a>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Register</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
+                <li class="nav-item">
+                    <a href="{{route('todos.index')}}" class="nav-link">Todos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('todos.create')}}" class="nav-link">New Todo</a>
+                </li>
             </ul>
         </div>
         
