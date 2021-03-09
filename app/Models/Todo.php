@@ -8,4 +8,5 @@ class Todo extends Model
 {
     protected $table = 'todos';
     // public $timestamps = false; turns off table timestamps
+    protected $fillable = ['title', 'body', 'completed', 'priority'];
 }
