@@ -15,8 +15,8 @@ class CreateToDosTable extends Migration
     {
         Schema::create('to_dos', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('details');
+            $table->string('title', 50)->unique();
+            $table->string('details', 250);
             $table->boolean('completed')->default(false);
             $table->timestamps();
         });

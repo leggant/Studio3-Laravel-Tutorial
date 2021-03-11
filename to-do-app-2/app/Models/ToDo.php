@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ToDo extends Model
 {
-    use HasFactory;
+    protected $table = 'todos';
     protected $fillable = ['title', 'details', 'completed'];
 }
