@@ -10008,3 +10008,7 @@ body {
   background: #4aaff4;
   background: radial-gradient(circle, #4aaff4, 32%, #4a4ef4 100%);
 }
+
+.navbar-brand {
+  color: #ff2d20;
+}

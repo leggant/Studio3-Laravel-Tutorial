@@ -85,7 +85,8 @@ class ToDoController extends Controller
      */
     public function update(Request $request, ToDo $toDo)
     {
-        //
+        $toDo->update($request->all());
+        return redirect()->route('todos.index');
     }
 
     /**

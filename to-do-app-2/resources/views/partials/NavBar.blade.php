@@ -19,10 +19,10 @@
         </div>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a href="{{ route('todos.index') }}" class="nav-link h4 btn-link">Current Todos</a>
+                <a href="{{ route('todos.index') }}" class="nav-link h4 btn-link text-white ">Current Todos</a>
             </li>
             <li class="nav-item">
-                    <a href="{{ route('todos.create') }}" class="nav-link h4 btn-link">New Todo</a>
+                    <a href="{{ route('todos.create') }}" class="nav-link h4 btn-link text-white">New Todo</a>
             </li>
         </ul>
     </div>
