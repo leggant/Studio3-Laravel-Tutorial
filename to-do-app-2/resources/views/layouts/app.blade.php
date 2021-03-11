@@ -13,6 +13,5 @@
         @yield('content')
     </main>
     @include('partials.Footer')
-
 </body>
 </html>

@@ -15,7 +15,7 @@ class ToDoController extends Controller
      */
     public function index()
     {
-        return view('pages.ToDos.index');
+        return view('ToDos.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class ToDoController extends Controller
      */
     public function create()
     {
-        return view('todos.create');
+        return view('ToDos.create');
     }
 
     /**
