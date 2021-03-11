@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ToDo extends Model
 {
-    protected $table = 'todos';
+    protected $table = 'usertodos';
     protected $fillable = ['title', 'details', 'completed'];
 }

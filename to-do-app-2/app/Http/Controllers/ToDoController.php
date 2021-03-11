@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+
 use App\Models\ToDo;
 
 class ToDoController extends Controller
@@ -15,7 +19,8 @@ class ToDoController extends Controller
      */
     public function index()
     {
-        return view('ToDos.index');
+        $todoslist = ToDo::latest()->get();
+        return view('ToDos.index')->with('todos', $todoslist);
     }
 
     /**
@@ -36,9 +41,9 @@ class ToDoController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = request->validate([
-            'title' => 'required|max:50',
-            'details' => 'max:250'
+        $validated = $request->validate([
+            'title' => 'required|string|min:2|max:50',
+            'details' => 'required|string|min:5|max:500'
         ]);
 
         $todo = ToDo::create([
@@ -46,6 +51,7 @@ class ToDoController extends Controller
             'details' => $request->details,
             'completed' => 0
         ]);
+        return redirect()->route('todos.index');
     }
 
     /**
