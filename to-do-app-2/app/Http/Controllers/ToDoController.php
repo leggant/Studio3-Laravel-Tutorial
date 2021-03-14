@@ -83,9 +83,16 @@ class ToDoController extends Controller
      * @param  \App\Models\ToDo  $toDo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ToDo $toDo)
+    public function update(Request $request, $id)
     {
-        $toDo->update($request->all());
+        $toDos = ToDo::query();
+        if($request->get('completed') && $toDos->where('id', $id)->exists()) {
+            $toDo = $toDos->find($id);
+            if($toDo->completed == 0){
+                $toDo->completed = 1;
+                $toDo->save();
+            }
+        }
         return redirect()->route('todos.index');
     }
 
