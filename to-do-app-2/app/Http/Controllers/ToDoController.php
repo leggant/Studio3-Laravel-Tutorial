@@ -86,12 +86,11 @@ class ToDoController extends Controller
     public function update(Request $request, $id)
     {
         $toDos = ToDo::query();
-        if($request->get('completed') && $toDos->where('id', $id)->exists()) {
+        $completed = $request->get('completed');
+        if($toDos->where('id', $id)->exists()) {
             $toDo = $toDos->find($id);
-            if($toDo->completed == 0){
-                $toDo->completed = 1;
-                $toDo->save();
-            }
+            $toDo->completed = $completed;
+            $toDo->save();
         }
         return redirect()->route('todos.index');
     }
