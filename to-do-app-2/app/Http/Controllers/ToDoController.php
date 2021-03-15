@@ -101,8 +101,13 @@ class ToDoController extends Controller
      * @param  \App\Models\ToDo  $toDo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ToDo $toDo)
+    public function destroy(ToDo $toDo, $id)
     {
-        //
+        $toDos = ToDo::query();
+        if($toDos->where('id', $id)->exists()){
+            $todo = $toDos->find($id);
+            $todo->delete();
+        }
+        return redirect()->route('todos.index');
     }
 }

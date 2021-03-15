@@ -12,6 +12,6 @@ Route::group(['prefix' => 'user/todos'], function() {
     Route::get('/all', [ToDoController::class, 'index'])->name('todos.index');
     Route::get('/{id}', [ToDoController::class, 'show']);
     Route::put('/{id}', [ToDoController::class, 'update'])->name('todos.update');
-    Route::delete('/{id}', [ToDoController::class, 'destroy']);
+    Route::delete('/{id}', [ToDoController::class, 'destroy'])->name('todos.delete');
     Route::post('/', [ToDoController::class, 'store'])->name('todos.store');
 });
