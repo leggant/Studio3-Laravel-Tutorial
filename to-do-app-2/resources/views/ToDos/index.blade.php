@@ -10,7 +10,7 @@ To Dos App | Current To Dos
         <h1 class="display-4 text-white text-center mb-5">My Current To Dos</h1>
         @forelse($todos as $todo)
         <div class="bg-white d-flex ml-auto mb-4">
-            <div class="p-4">
+            <div class="p-2 d-flex align-items-center">
             @if($todo->completed == 0)
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4aaff4" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -21,39 +21,51 @@ To Dos App | Current To Dos
                 @method("DELETE")
                 @csrf
                 <button type="submit" class="btn btn-sm mr-auto ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <line x1="4" y1="7" x2="20" y2="7" />
-                    <line x1="10" y1="11" x2="10" y2="17" />
-                    <line x1="14" y1="11" x2="14" y2="17" />
-                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-checks" width="36" height="36" viewBox="0 0 24 24" stroke-width="2.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 12l5 5l10 -10" />
+  <path d="M2 12l5 5m5 -5l5 -5" />
+</svg>
                 </button>
                 </form>
             @endif 
             </div>
             <div class="d-flex flex-column pt-3">
-                <h3>{{$todo->title}}</h3>
-                <p>{{$todo->details}}</p>
+                <h3><a href="{{ route('todo.show', $todo->id) }}">{{ $todo->title }}</a></h3>
+                <p>{{ $todo->details }}</p>
             </div>
-            
             <div class="d-flex flex-column justify-content-center ml-auto mr-4">
             @if ($todo->completed == 0)
+            <div class="d-flex">
                 <form action="{{route('todos.update', $todo->id ) }}" method="POST" >
                     @method("PUT")
                     @csrf
                     <input type="text" hidden value="1" name="completed">
                     <button type="submit" class="btn btn-success btn-sm mr-auto ">Complete</button>
                 </form>
+                <form action="{{route('todos.delete', $todo->id ) }}" method="POST" >
+                    @method("DELETE")
+                    @csrf
+                    <input type="text" hidden value="1" name="completed">
+                    <button type="submit" class="btn btn-warning btn-sm ml-2">Delete</button>
+                </form>
+            </div>
             @endif 
             @if ($todo->completed == 1)
+            <div class="d-flex">
                 <form action="{{route('todos.update', $todo->id ) }}" method="POST" >
                     @method("PUT")
                     @csrf
                     <input type="text" hidden value="0" name="completed">
                     <button type="submit" class="btn btn-success btn-sm mr-auto ">Reset</button>
                 </form>
+                <form action="{{route('todos.delete', $todo->id ) }}" method="POST" >
+                    @method("DELETE")
+                    @csrf
+                    <input type="text" hidden value="1" name="completed">
+                    <button type="submit" class="btn btn-warning btn-sm ml-2">Delete</button>
+                </form>
+            </div>
             @endif
             </div>    
         </div>

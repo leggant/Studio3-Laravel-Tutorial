@@ -60,9 +60,12 @@ class ToDoController extends Controller
      * @param  \App\Models\ToDo  $toDo
      * @return \Illuminate\Http\Response
      */
-    public function show(ToDo $toDo)
+    public function showitem($id)
     {
-        //
+        $todo = ToDo::find($id)->firstOr(function () {
+            return view(todo.show)->with(['$error' => "An Error Occured."]);
+        });
+        return view('toDos.show')->with('toDo', $todo);
     }
 
     /**
@@ -71,7 +74,7 @@ class ToDoController extends Controller
      * @param  \App\Models\ToDo  $toDo
      * @return \Illuminate\Http\Response
      */
-    public function edit(ToDo $toDo)
+    public function edit(ToDo $toDo, $id)
     {
         //
     }

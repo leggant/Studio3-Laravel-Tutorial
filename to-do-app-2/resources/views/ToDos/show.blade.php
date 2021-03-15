@@ -1,25 +1,30 @@
 @extends('layouts.app')
 
 @section('title')
-To Dos App | Create New To Do
+To Dos App | Current To Do
 @endsection
 
 @section('content')
     <section class="w-100 h-100 d-flex justify-content-center align-items-center flex-column">
-        <div class="w-50 mb-3">
-            <h1 class="display-4 text-white text-center">To Dos</h1>
+        <div class="w-60 mb-5 mt-5">
+            <h1>Your To Do Item: </h1>
         </div>
-        <form action="{{route('todos.store')}}" method="post">
+        <div class="w-50 mb-3">
+            <h2 class="display-8 text-white text-center">{{ $toDo->title }}</h2>
+            <h3 class="text-white text-center">{{ $toDo->details }}</h3>
+        </div>
+        <p>{{ $toDo->title }}</p>
+        {{-- <form action="" method="post">
         @csrf
             <div class="input-group mb-3 w-100">
-                <input type="text" name="title" placeholder="Enter New To Do Title" class="form-control form-control-lg">
+                <input type="text" name="title" placeholder="Old Title Is?" class="form-control form-control-lg">
             </div>
             <div class="input-group mb-3 w-100">
                 <textarea name="details" class="form-control" cols="30" rows="10" placeholder="Enter Extra Details..."></textarea>
             </div>
             <div class="input-group mb-3 w-100 input-group-append">
-                <button class="btn btn-success btn-lg btn-block" type="submit">Add To Do</button>
+                <button class="btn btn-success btn-lg btn-block" type="submit">Save Changes</button>
             </div>
-        </form>
+        </form> --}}
     </section>
 @endsection

@@ -10,8 +10,12 @@ Route::get('/about', [PagesController::class, 'about'])->name('pages.about');
 Route::group(['prefix' => 'user/todos'], function() {
     Route::get('/create', [ToDoController::class, 'create'])->name('todos.create');
     Route::get('/all', [ToDoController::class, 'index'])->name('todos.index');
-    Route::get('/{id}', [ToDoController::class, 'show']);
     Route::put('/{id}', [ToDoController::class, 'update'])->name('todos.update');
     Route::delete('/{id}', [ToDoController::class, 'destroy'])->name('todos.delete');
     Route::post('/', [ToDoController::class, 'store'])->name('todos.store');
+});
+
+Route::group(['prefix' => 'user/todo'], function() {
+    Route::get('/{id}', [ToDoController::class, 'showitem'])->name('todo.show');
+    //Route::get('/{id}', [ToDoController::class, 'edit'])->name('todo.edit');
 });
