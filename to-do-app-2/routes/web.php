@@ -19,3 +19,6 @@ Route::group(['prefix' => 'user/todo'], function() {
     Route::get('/{id}', [ToDoController::class, 'showitem'])->name('todo.show');
     //Route::get('/{id}', [ToDoController::class, 'edit'])->name('todo.edit');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
