@@ -14,7 +14,7 @@ class CreateToDosTable extends Migration
     public function up()
     {
         Schema::create('usertodos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('title', 50)->unique();
             $table->string('details', 500);
             $table->boolean('completed')->default(false);
