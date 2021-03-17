@@ -4,9 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ToDoController;
 use App\Http\Controllers\PagesController;
 
-Route::get('/', [PagesController::class, 'index'])->name('pages.home');
-Route::get('/about', [PagesController::class, 'about'])->name('pages.about');
-
 Route::group(['prefix' => 'user/todos'], function() {
     Route::get('/create', [ToDoController::class, 'create'])->name('todos.create');
     Route::get('/all', [ToDoController::class, 'index'])->name('todos.index');
@@ -21,4 +18,4 @@ Route::group(['prefix' => 'user/todo'], function() {
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,25 +1,90 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 // Variables
 @import 'variables';
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+html {
+    font-size: 16px;
+    color: #fff;
+}
 body {
     width: 100vw;
     height: 100vh;
     background: rgb(74, 175, 244);
     background: radial-gradient(circle, rgba(74, 175, 244, 1), 32%, rgba(74, 78, 244, 1) 100%);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav {
     padding: 1rem 0;
+
+}
+li.nav-item.dropdown {
+    margin-left: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    text-shadow: 2px 3px 4px rgba(0,0,0,0.59);
+    #navbarDropdown {
+        font-size: 1rem;
+        color: white;
+    }
 }
 
 .nav-title {
+    padding: 1rem 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 1.5rem;
     color: white;
 }
 
 .navbar-brand {
     color: #ff2d20;
+}
+.card {
+    margin-top: 3rem;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    .card-header, .card-body {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    .card-body {
+        font-weight: 300;
+        font-size: 1rem;
+    }
+    label {
+        color:white;
+    }
+    a {
+        color: #000000;
+        &:hover {
+            color: rgba($color: #fff, $alpha: 1.0)
+        }
+    }
+}
+.item-title {
+    max-width: 450px;
+    text-align: center;
+    overflow-wrap: break-word;
+    margin-bottom: 2rem;
+}
+.item-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.to-do-item-show 
+{
+    background-color: rgba(74, 175, 244, 0.5);
+    border-radius: 10px;
+    box-shadow: 5px 10px 17px -4px rgba(0,0,0,0.67);
+    -webkit-box-shadow: 5px 10px 17px -4px rgba(0,0,0,0.67);
+    -moz-box-shadow: 5px 10px 17px -4px rgba(0,0,0,0.67);
+    padding: 5rem 5rem;
+    width: fit-content;
 }

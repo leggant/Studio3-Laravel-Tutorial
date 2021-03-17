@@ -37,11 +37,11 @@ To Dos App | Current To Dos
             <div class="d-flex flex-column justify-content-center ml-auto mr-4">
             @if ($todo->completed == 0)
             <div class="d-flex">
-                <form action="{{route('todos.update', $todo->id ) }}" method="POST" >
+                <form action="{{ route('todos.update', $todo->id ) }}" method="POST" >
                     @method("PUT")
                     @csrf
                     <input type="text" hidden value="1" name="completed">
-                    <button type="submit" class="btn btn-success btn-sm mr-auto ">Complete</button>
+                    <button type="submit" class="btn btn-success btn-sm mr-auto">Complete</button>
                 </form>
                 <form action="{{route('todos.delete', $todo->id ) }}" method="POST" >
                     @method("DELETE")
