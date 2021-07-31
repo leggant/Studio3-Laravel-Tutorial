@@ -1,6 +1,12 @@
 /public/index.php
 server.php
-app\Console\Kernel.php
+app/Console/Kernel.php
 package-lock.json
 composer.lock
 composer.json
+config/*
+node_modules/*
+tests/CreatesApplication.php
+app/Http/Middleware/*
+app/Providers/*
+package.json
