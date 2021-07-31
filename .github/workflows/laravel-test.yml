@@ -5,8 +5,6 @@ on:
     branches: [ To-Do-App-V2, To-Do-App-V1, Main ]
   pull_request:
     branches: [ To-Do-App-V2, To-Do-App-V1, Main ]
-  commit:
-    Branches: [ To-Do-App-V2, To-Do-App-V1, Main ]
 
 jobs:
   laravel-tests:
