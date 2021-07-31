@@ -12,5 +12,5 @@ jobs:
     addAssignees: true
     addAssignees: author
     addReviewers: true
-    reviewers:
-      - leggant
+      - reviewers:
+        - leggant
