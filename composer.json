@@ -58,6 +58,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "fix-cs": [
+            "prettier **/*.{js,php,css,json,md,yml} --write"
         ]
     }
 }

@@ -2,6 +2,9 @@
 
 # Quick Start
 
+[![GitHub Super-Linter](https://github.com/leggant/Studio3-Laravel-Tutorial/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
+
 ---
 
 ## Install Dependencies
