@@ -9,7 +9,6 @@ jobs:
       - uses: kentaro-m/auto-assign-action@v1.2.0
         with:
           configuration-path: ".github/pull_request_admin.yml" 
-    addAssignees: true
     addAssignees: author
     addReviewers: true
     reviewers:
