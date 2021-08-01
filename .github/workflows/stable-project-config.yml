@@ -7,7 +7,7 @@ on:
         branches: [To-Do-App-*, Main]
 
 jobs:
-    laravel-tests:
+    laravel-project-test:
         runs-on: ubuntu-latest
 
         steps:
