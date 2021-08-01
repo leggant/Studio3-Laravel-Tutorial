@@ -1,4 +1,4 @@
-name: Laravel
+name: Laravel Project Config Testing
 
 on:
     push:

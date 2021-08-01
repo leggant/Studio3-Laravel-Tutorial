@@ -11,6 +11,6 @@ jobs:
           configuration-path: ".github/pull_request_admin.yml" 
     addAssignees: author
     addReviewers: true
-    reviewers:
-      - leggant
+      - reviewers:
+        - leggant
 
