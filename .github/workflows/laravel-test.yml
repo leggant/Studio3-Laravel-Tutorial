@@ -2,9 +2,9 @@ name: Laravel Project Config Testing
 
 on:
     push:
-        branches: [To-Do-App-V2, To-Do-App-V1, Main]
+        branches: [To-Do-App-*, Main]
     pull_request:
-        branches: [To-Do-App-V2, To-Do-App-V1, Main]
+        branches: [To-Do-App-*, Main]
 
 jobs:
     laravel-tests:
