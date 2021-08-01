@@ -2,9 +2,9 @@
 name: PHP Linter Check
 on: 
     push:
-        branches: [To-Do-App-V3, Main]
+        branches: [To-Do-App-*, Main]
     pull_request:
-        branches: [To-Do-App-V2, Main]
+        branches: [To-Do-App-*, Main]
 jobs:
   phplint:
     runs-on: ubuntu-latest
