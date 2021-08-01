@@ -1,8 +1,8 @@
-name: Laravel Project Config Testing
+name: Laravel Project Commit Testing
 
 on:
-    pull_request:
-        branches: [To-Do-App-V2]
+    push:
+        branches: [To-Do-App-V3]
 
 jobs:
     laravel-project-test:
