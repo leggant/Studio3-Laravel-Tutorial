@@ -1,4 +1,4 @@
-name: Laravel
+name: Laravel Security Checks + PHPUnit Tests
 
 on:
   push:
