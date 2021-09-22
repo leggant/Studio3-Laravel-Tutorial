@@ -23,11 +23,14 @@ jobs:
         key: db
     - name: Display Security Vulnerabilities
       uses: symfonycorp/security-checker-action@v2
-    - name: ZAP Scan
-      uses: zaproxy/action-baseline@v0.5.0
+    - name: NPM Audit
+      uses: luisfontes19/npm-audit-action@v0.1.0
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        docker_name: 'owasp/zap2docker-stable'
-        target: 'https://www.zaproxy.org'
-        rules_file_name: '.zap/rules.tsv'
-        cmd_options: '-a'
+        project-path: "."
+        json: false
+        only: prod
+        level: critical
+        fix: false
+        package-lock-only: false
+        force: true
+        github-token: ${{ secrets.MY_TOKEN }} 
