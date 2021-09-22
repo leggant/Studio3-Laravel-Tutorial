@@ -22,7 +22,6 @@ jobs:
       with:
         path: ~/.symfony/cache
         key: db
-    - uses: actions/checkout@v2
     - uses: symfonycorp/security-checker-action@v2
       with:
         disable-exit-code: 1
