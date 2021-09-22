@@ -7,7 +7,7 @@ on:
     branches: [ To-Do-App-V2 ]
 
 jobs:
-  consecutiveness:
+  Run-Consecutive-Tests:
     runs-on: ubuntu-latest
     steps:
     - uses: mktcode/consecutive-workflow-action@v1
@@ -36,7 +36,7 @@ jobs:
         json: false
         only: prod
         level: critical
-        fix: false
+        fix: true
         package-lock-only: false
         force: true
         github-token: ${{ secrets.GITHUB_TOKEN }} 
