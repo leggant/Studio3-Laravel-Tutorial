@@ -33,10 +33,8 @@ jobs:
     - uses: luisfontes19/npm-audit-action@v0.1.0
       with:
         project-path: "."
-        json: false
+        json: true
         only: prod
-        level: critical
-        fix: true
+        level: high
         package-lock-only: false
-        force: true
         github-token: ${{ secrets.GITHUB_TOKEN }} 
