@@ -22,4 +22,4 @@ jobs:
         path: ~/.symfony/cache
         key: db
     - name: Display Security Vulnerabilities
-    - uses: symfonycorp/security-checker-action@v2
+      uses: symfonycorp/security-checker-action@v2
